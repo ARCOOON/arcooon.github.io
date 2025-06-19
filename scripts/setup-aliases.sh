@@ -2,7 +2,7 @@
 
 BASHRC="$HOME/.bashrc"
 MARKER="# >>> Custom Aliases >>>"
-END_MARKER="# <<< End <<<"
+END_MARKER="# <<< Custom Aliases <<<"
 
 # Define the aliases you want to add
 ALIASES=$(
@@ -21,6 +21,7 @@ else
         echo "$MARKER"
         echo "$ALIASES"
         echo "$END_MARKER"
+        echo ""
     } >>"$BASHRC"
     echo "Done. Run 'source ~/.bashrc' or restart your terminal."
 fi
