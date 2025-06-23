@@ -1,14 +1,13 @@
 #!/bin/bash
 
 BASHRC="$HOME/.bashrc"
-MARKER="# >>> Custom Aliases >>>"
-END_MARKER="# <<< Custom Aliases <<<"
+MARKER="# >>> CUSTOM_ALIASES >>>"
+END_MARKER="# <<< CUSTOM_ALIASES <<<"
 
-# Define the aliases you want to add
-ALIASES=$(
-    cat <<'EOF'
-alias cls='clear'
-EOF
+ALIASES=(
+    "alias ll='ls -alF'"
+    "alias gs='git status'"
+    "alias ..='cd ..'"
 )
 
 # Check if already appended
@@ -19,9 +18,10 @@ else
     {
         echo ""
         echo "$MARKER"
-        echo "$ALIASES"
+        for alias_cmd in "${ALIASES[@]}"; do
+            echo "$alias_cmd"
+        done
         echo "$END_MARKER"
-        echo ""
     } >>"$BASHRC"
     echo "Done. Run 'source ~/.bashrc' or restart your terminal."
 fi
