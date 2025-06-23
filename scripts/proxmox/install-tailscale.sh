@@ -20,7 +20,12 @@ fi
 
 # --- Check if tailscale is already installed ---
 echo "[*] Checking install status"
-pct exec "$CTID" -- tailscale version >/dev/null && echo "✅ Installed" && exit 0 || echo "❌ Not installed"
+if pct exec "$CTID" -- bash -c "command -v tailscale >/dev/null && command -v tailscaled >/dev/null"; then
+    echo "✅ Installed"
+    exit 0
+else
+    echo "❌ Not installed"
+fi
 
 # --- Inject Tailscale device permissions if not already present ---
 echo "[*] Checking and patching $CONF_PATH..."
@@ -29,9 +34,9 @@ append_if_missing() {
     local line="$1"
     if ! grep -Fxq "$line" "$CONF_PATH"; then
         echo "$line" >>"$CONF_PATH"
-        echo "  ✅ Added: $line"
+        echo "✅ Added: $line"
     else
-        echo "  🆗 Config already patched"
+        echo "🆗 Config already patched"
     fi
 }
 
