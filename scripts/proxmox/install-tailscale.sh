@@ -3,10 +3,10 @@
 set -e
 
 # --- Verify this is a Proxmox PVE host ---
-if ! grep -qi "proxmox" /etc/os-release; then
-    echo "❗ This script must be run on a Proxmox PVE host."
-    exit 1
-fi
+#if ! grep -qi "proxmox" /etc/os-release; then
+#    echo "❗ This script must be run on a Proxmox PVE host."
+#    exit 1
+#fi
 
 # --- Prompt for Container ID ---
 read -rp "Enter LXC container ID: " CTID
