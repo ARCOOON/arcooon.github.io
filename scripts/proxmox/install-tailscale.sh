@@ -11,7 +11,7 @@ set -e
 # --- Prompt for Container ID ---
 read -rp "Enter LXC container ID: " CTID
 CONF_PATH="/etc/pve/lxc/${CTID}.conf"
-❗
+
 # --- Validate LXC exists ---
 if [[ ! -f "$CONF_PATH" ]]; then
     echo "❗ LXC container $CTID does not exist."
