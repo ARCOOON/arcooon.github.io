@@ -8,6 +8,7 @@ ALIASES=(
     "alias ll='ls -alF'"
     "alias gs='git status'"
     "alias ..='cd ..'"
+    "alias cls='clear'"
 )
 
 # Check if already appended
