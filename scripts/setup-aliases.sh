@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASHRC="$HOME/.bashrc"
+FILE="$HOME/.bash_aliases"
 MARKER="# >>> CUSTOM_ALIASES >>>"
 END_MARKER="# <<< CUSTOM_ALIASES <<<"
 
@@ -12,10 +12,10 @@ ALIASES=(
 )
 
 # Check if already appended
-if grep -q "$MARKER" "$BASHRC"; then
-    echo "Aliases already exist in $BASHRC. Skipping."
+if grep -q "$MARKER" "$FILE"; then
+    echo "Aliases already exist in $FILE. Skipping."
 else
-    echo "Appending custom aliases to $BASHRC..."
+    echo "Appending custom aliases to $FILE..."
     {
         echo ""
         echo "$MARKER"
@@ -23,6 +23,6 @@ else
             echo "$alias_cmd"
         done
         echo "$END_MARKER"
-    } >>"$BASHRC"
+    } >>"$FILE"
     echo "Done. Run 'source ~/.bashrc' or restart your terminal."
 fi
