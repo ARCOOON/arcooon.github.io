@@ -4,19 +4,26 @@ on:
   push:
     branches:
       - main
+      - master
   workflow_dispatch:
 
 permissions:
   contents: write
 
+concurrency:
+  group: directory-index-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   generate:
     runs-on: ubuntu-latest
+
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -24,12 +31,21 @@ jobs:
           python-version: "3.12"
 
       - name: Generate directory index JSON
+        shell: bash
         run: |
+          set -euo pipefail
+          python --version
+          ls -la
+          ls -la tools || true
           python tools/generate_directory_index.py
+          ls -la directory-index.json
 
       - name: Commit and push directory index
+        shell: bash
         run: |
-          if git diff --quiet; then
+          set -euo pipefail
+
+          if git diff --quiet -- directory-index.json; then
             echo "No changes to commit."
             exit 0
           fi
