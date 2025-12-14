@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Dict, List, Any
 
 
-ROOT = Path(__file__).resolve().parent.parent
+ROOT = Path(__file__).resolve().parent
 OUTPUT_FILE = ROOT / "directory-index.json"
 
 IGNORED_DIRS = {
