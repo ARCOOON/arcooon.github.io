@@ -92,6 +92,11 @@
       "name": "run.sh",
       "path": "/run.sh",
       "type": "file"
+    },
+    {
+      "name": "scripts.txt",
+      "path": "/scripts.txt",
+      "type": "file"
     }
   ]
 }
