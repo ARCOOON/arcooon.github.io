@@ -6,7 +6,7 @@ set -euo pipefail
 # No jq. No python. No external TUI tools.
 
 BASE_URL="${BASE_URL:-https://arcooon.github.io}"
-SCRIPTS_LIST_URL="${SCRIPTS_LIST_URL:-$BASE_URL/scripts-list.txt}"
+SCRIPTS_LIST_URL="${SCRIPTS_LIST_URL:-$BASE_URL/list.txt}"
 
 SAFE_MODE="${SAFE_MODE:-0}"  # 1 = do not execute
 
