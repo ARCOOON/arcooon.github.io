@@ -13,6 +13,5 @@
 |   `-- generate_directory_index.py
 |-- .nojekyll
 |-- index.html
-|-- list.txt
 |-- README.md
 `-- run.sh

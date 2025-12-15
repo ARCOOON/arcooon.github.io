@@ -84,11 +84,6 @@
       "type": "file"
     },
     {
-      "name": "list.txt",
-      "path": "/list.txt",
-      "type": "file"
-    },
-    {
       "name": "README.md",
       "path": "/README.md",
       "type": "file"
