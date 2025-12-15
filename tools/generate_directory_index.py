@@ -7,7 +7,7 @@ ROOT = Path(__file__).resolve().parent.parent
 OUTPUT_JSON = ROOT / "directory-index.json"
 OUTPUT_TREE_TXT = ROOT / "directory-tree.txt"
 OUTPUT_INDEX_ASCII = ROOT / "index"  # lets you curl https://arcooon.github.io/index
-OUTPUT_SCRIPTS_LIST = ROOT / "scripts-list.txt"  # pure-bash friendly list
+OUTPUT_SCRIPTS_LIST = ROOT / "list.txt"  # pure-bash friendly list
 
 IGNORED_DIRS = {
     ".git",
