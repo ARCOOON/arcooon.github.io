@@ -45,7 +45,15 @@ jobs:
         run: |
           set -euo pipefail
 
-          if git diff --quiet -- directory-index.json; then
+          # IMPORTANT:
+          # `git diff` does NOT include untracked files.
+          # On the first run, directory-index.json is untracked,
+          # so a naive diff check lies and says "No changes to commit".
+          #
+          # Fix: stage first, then check the staged diff.
+          git add directory-index.json
+
+          if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0
           fi
@@ -53,6 +61,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add directory-index.json
           git commit -m "chore: update directory index"
           git push
