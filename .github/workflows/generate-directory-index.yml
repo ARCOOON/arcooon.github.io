@@ -30,28 +30,20 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Generate directory index JSON
+      - name: Generate directory index outputs (JSON + ASCII + scripts list)
         shell: bash
         run: |
           set -euo pipefail
           python --version
-          ls -la
-          ls -la tools || true
           python tools/generate_directory_index.py
-          ls -la directory-index.json
+          ls -la directory-index.json directory-tree.txt index list.txt
 
-      - name: Commit and push directory index
+      - name: Commit and push directory index outputs
         shell: bash
         run: |
           set -euo pipefail
 
-          # IMPORTANT:
-          # `git diff` does NOT include untracked files.
-          # On the first run, directory-index.json is untracked,
-          # so a naive diff check lies and says "No changes to commit".
-          #
-          # Fix: stage first, then check the staged diff.
-          git add directory-index.json
+          git add directory-index.json directory-tree.txt index list.txt
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
@@ -61,5 +53,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git commit -m "chore: update directory index"
+          git commit -m "chore: update directory index outputs"
           git push
