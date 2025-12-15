@@ -84,6 +84,11 @@
       "type": "file"
     },
     {
+      "name": "list.txt",
+      "path": "/list.txt",
+      "type": "file"
+    },
+    {
       "name": "README.md",
       "path": "/README.md",
       "type": "file"
@@ -91,11 +96,6 @@
     {
       "name": "run.sh",
       "path": "/run.sh",
-      "type": "file"
-    },
-    {
-      "name": "scripts.txt",
-      "path": "/scripts.txt",
       "type": "file"
     }
   ]
