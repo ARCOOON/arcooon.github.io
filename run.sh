@@ -6,7 +6,7 @@ set -euo pipefail
 # Works best in real TTY terminals (Windows Terminal / iTerm / GNOME Terminal).
 
 BASE_URL="${BASE_URL:-https://arcooon.github.io}"
-SCRIPTS_LIST_URL="${SCRIPTS_LIST_URL:-$BASE_URL/scripts-list.txt}"
+SCRIPTS_LIST_URL="${SCRIPTS_LIST_URL:-$BASE_URL/scripts.txt}"
 SAFE_MODE="${SAFE_MODE:-0}"  # 1 = do not execute
 
 # Always read keys from the terminal even if stdin is redirected.
