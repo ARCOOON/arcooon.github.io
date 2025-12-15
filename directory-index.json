@@ -1,0 +1,80 @@
+{
+  "name": "",
+  "path": "/",
+  "type": "directory",
+  "children": [
+    {
+      "name": ".github",
+      "path": "/github",
+      "type": "directory",
+      "children": [
+        {
+          "name": "workflows",
+          "path": "/github/workflows",
+          "type": "directory",
+          "children": [
+            {
+              "name": "generate-directory-index.yml",
+              "path": "/github/workflows/generate-directory-index.yml",
+              "type": "file"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "scripts",
+      "path": "/scripts",
+      "type": "directory",
+      "children": [
+        {
+          "name": "proxmox",
+          "path": "/scripts/proxmox",
+          "type": "directory",
+          "children": [
+            {
+              "name": "install-tailscale.sh",
+              "path": "/scripts/proxmox/install-tailscale.sh",
+              "type": "file"
+            }
+          ]
+        },
+        {
+          "name": "enable_root_ssh.sh",
+          "path": "/scripts/enable_root_ssh.sh",
+          "type": "file"
+        },
+        {
+          "name": "install-docker.sh",
+          "path": "/scripts/install-docker.sh",
+          "type": "file"
+        },
+        {
+          "name": "install-tailscale.sh",
+          "path": "/scripts/install-tailscale.sh",
+          "type": "file"
+        },
+        {
+          "name": "setup-aliases.sh",
+          "path": "/scripts/setup-aliases.sh",
+          "type": "file"
+        }
+      ]
+    },
+    {
+      "name": ".nojekyll",
+      "path": "/nojekyll",
+      "type": "file"
+    },
+    {
+      "name": "index.html",
+      "path": "/index.html",
+      "type": "file"
+    },
+    {
+      "name": "README.md",
+      "path": "/README.md",
+      "type": "file"
+    }
+  ]
+}
