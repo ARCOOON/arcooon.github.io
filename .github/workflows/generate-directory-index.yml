@@ -36,14 +36,14 @@ jobs:
           set -euo pipefail
           python --version
           python tools/generate_directory_index.py
-          ls -la directory-index.json index list.txt
+          ls -la directory-index.json index scripts.txt
 
       - name: Commit and push directory index outputs
         shell: bash
         run: |
           set -euo pipefail
 
-          git add directory-index.json index list.txt
+          git add directory-index.json index scripts.txt
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
