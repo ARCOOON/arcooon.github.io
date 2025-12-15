@@ -62,6 +62,18 @@
       ]
     },
     {
+      "name": "tools",
+      "path": "/tools",
+      "type": "directory",
+      "children": [
+        {
+          "name": "generate_directory_index.py",
+          "path": "/tools/generate_directory_index.py",
+          "type": "file"
+        }
+      ]
+    },
+    {
       "name": ".nojekyll",
       "path": "/nojekyll",
       "type": "file"
