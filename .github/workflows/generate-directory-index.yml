@@ -36,14 +36,14 @@ jobs:
           set -euo pipefail
           python --version
           python tools/generate_directory_index.py
-          ls -la directory-index.json directory-tree.txt index list.txt
+          ls -la directory-index.json index list.txt
 
       - name: Commit and push directory index outputs
         shell: bash
         run: |
           set -euo pipefail
 
-          git add directory-index.json directory-tree.txt index list.txt
+          git add directory-index.json index list.txt
 
           if git diff --cached --quiet; then
             echo "No changes to commit."
@@ -53,5 +53,5 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git commit -m "chore: update directory index outputs"
+          git commit -m "workflow[cli]: Updated project index."
           git push
