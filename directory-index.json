@@ -45,6 +45,11 @@
           "type": "file"
         },
         {
+          "name": "install-cloudflared.sh",
+          "path": "/scripts/install-cloudflared.sh",
+          "type": "file"
+        },
+        {
           "name": "install-docker.sh",
           "path": "/scripts/install-docker.sh",
           "type": "file"

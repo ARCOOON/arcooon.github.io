@@ -6,6 +6,7 @@
 |   |-- proxmox/
 |   |   `-- install-tailscale.sh
 |   |-- enable_root_ssh.sh
+|   |-- install-cloudflared.sh
 |   |-- install-docker.sh
 |   |-- install-tailscale.sh
 |   `-- setup-aliases.sh

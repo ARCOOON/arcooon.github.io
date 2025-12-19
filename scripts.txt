@@ -1,4 +1,5 @@
 /scripts/enable_root_ssh.sh
+/scripts/install-cloudflared.sh
 /scripts/install-docker.sh
 /scripts/install-tailscale.sh
 /scripts/proxmox/install-tailscale.sh
