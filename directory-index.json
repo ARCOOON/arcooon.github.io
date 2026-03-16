@@ -40,8 +40,8 @@
           ]
         },
         {
-          "name": "enable_root_ssh.sh",
-          "path": "/scripts/enable_root_ssh.sh",
+          "name": "enable-root-ssh.sh",
+          "path": "/scripts/enable-root-ssh.sh",
           "type": "file"
         },
         {

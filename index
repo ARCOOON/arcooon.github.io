@@ -5,7 +5,7 @@
 |-- scripts/
 |   |-- proxmox/
 |   |   `-- install-tailscale.sh
-|   |-- enable_root_ssh.sh
+|   |-- enable-root-ssh.sh
 |   |-- install-cloudflared.sh
 |   |-- install-docker.sh
 |   |-- install-tailscale.sh
