@@ -8,6 +8,7 @@
 |   |-- enable-root-ssh.sh
 |   |-- install-cloudflared.sh
 |   |-- install-docker.sh
+|   |-- install-step-ca.sh
 |   |-- install-tailscale.sh
 |   `-- setup-aliases.sh
 |-- tools/

@@ -55,6 +55,11 @@
           "type": "file"
         },
         {
+          "name": "install-step-ca.sh",
+          "path": "/scripts/install-step-ca.sh",
+          "type": "file"
+        },
+        {
           "name": "install-tailscale.sh",
           "path": "/scripts/install-tailscale.sh",
           "type": "file"
