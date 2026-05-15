@@ -1,6 +1,7 @@
 /scripts/enable-root-ssh.sh
 /scripts/install-cloudflared.sh
 /scripts/install-docker.sh
+/scripts/install-golang.sh
 /scripts/install-step-ca.sh
 /scripts/install-tailscale.sh
 /scripts/proxmox/install-tailscale.sh

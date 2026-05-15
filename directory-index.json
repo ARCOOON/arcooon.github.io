@@ -55,6 +55,11 @@
           "type": "file"
         },
         {
+          "name": "install-golang.sh",
+          "path": "/scripts/install-golang.sh",
+          "type": "file"
+        },
+        {
           "name": "install-step-ca.sh",
           "path": "/scripts/install-step-ca.sh",
           "type": "file"
