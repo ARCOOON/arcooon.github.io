@@ -15,3 +15,10 @@ curl -fsSL https://get.docker.com | sh
 
 # Run docker daemon in rootless mode
 dockerd-rootless-setuptool.sh install
+
+# Applying docker host and path variables
+echo 'export PATH=/usr/bin:$PATH' >> ~/.bashrc
+echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
+
+# Start system docker service
+systemctl --user start docker.service
