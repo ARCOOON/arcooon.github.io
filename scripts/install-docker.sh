@@ -7,8 +7,8 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 # Updating packages and installing dependencies
-apt update
-apt install curl uidmap -y
+apt-get update
+apt-get install -y curl uidmap
 
 # Installing docker engine
 curl -fsSL https://get.docker.com | sh
