@@ -6,19 +6,27 @@ if [ "$(id -u)" -ne 0 ]; then
   exit 1
 fi
 
+echo "[+] Installing dependencies (curl, uidmap)..."
 # Updating packages and installing dependencies
-apt-get update
-apt-get install -y curl uidmap
+DEBIAN_FRONTEND=noninteractive apt-get -q update
+DEBIAN_FRONTEND=noninteractive apt-get -yq install curl uidmap
 
-# Installing docker engine
-curl -fsSL https://get.docker.com | sh
+if command -v docker &> /dev/null; then
+  echo "[#] Docker already installed, skipping the installer..."
+else
+  # Installing docker engine
+  curl -fsSL https://get.docker.com | sh
+fi
 
+echo "[+] Configuring docker to run rootless"
 # Run docker daemon in rootless mode
 dockerd-rootless-setuptool.sh install
 
+echo "[+] Applying docker host and env variables to ~/.bashrc"
 # Applying docker host and path variables
 echo 'export PATH=/usr/bin:$PATH' >> ~/.bashrc
 echo 'export DOCKER_HOST=unix:///run/user/1000/docker.sock' >> ~/.bashrc
 
+echo "[+] Starting docker service"
 # Start system docker service
 systemctl --user start docker.service
